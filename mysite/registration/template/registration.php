@@ -17,7 +17,7 @@ else
 {
     if (isset($regged_error) && $regged_error==true) echo '<p>Ошибка в заполнении формы!</p>';
     echo '
-    <form id="reg_form" method="post" action="index.php">
+    <form id="reg_form" method="post" action="index.php" onsubmit="return isValidForm()">
     Логин*: <input id="login" type="text" name="login" /><br />
     Пароль*: <input id="pass" type="password" name="password1" /><br />
     Подтверждение*: <input id="re_pass" type="password" name="password2" /><br />
@@ -29,5 +29,6 @@ else
 }
 ?>
 </div>
+<script type="text/javascript" src="../js/regform.js?<?php echo time(); ?>"></script>
 </body>
 </html>

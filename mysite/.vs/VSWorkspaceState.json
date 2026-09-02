@@ -1,11 +1,12 @@
 {
   "ExpandedNodes": [
     "",
+    "\\js",
     "\\lib",
     "\\main",
     "\\registration",
     "\\registration\\template"
   ],
-  "SelectedNode": "\\registration\\index.php",
+  "SelectedNode": "\\js\\regform.js",
   "PreviewInSolutionExplorer": false
 }
