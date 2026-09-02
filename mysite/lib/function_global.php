@@ -152,12 +152,15 @@ function is_admin($id, $link) {
 }
 
 function out($link) {
-    session_start();
-    $id = $_SESSION['id'];
-    mysqli_query($link, "UPDATE users SET online=0 WHERE id='$id'");
-    unset($_SESSION['id']);
+    @session_start(); // @ скрывает ошибку, если сессия уже запущена
+    if(isset($_SESSION['id'])){
+        $id = $_SESSION['id'];
+        mysqli_query($link, "UPDATE users SET online=0 WHERE id='$id'");
+        unset($_SESSION['id']);
+    }
     setcookie("login", "", time() - 360000, '/');
     setcookie("password", "", time() - 360000, '/');
-    header('Location: /');
+    header('Location: index.php');
+    exit(); // КРИТИЧЕСКИ ВАЖНО: останавливаем скрипт сразу после редиректа!
 }
 ?>

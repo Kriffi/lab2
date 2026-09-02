@@ -34,7 +34,7 @@ if (isset($_POST['DEL']) && $admin) //если было нажато удале�
 $rez = mysqli_query($link,"SELECT * FROM users WHERE id='$UID'");
 $ans = mysqli_fetch_assoc($rez);
 echo "<h1>Привет, ".$ans['login']."!</h1>";
-echo "<a href='/?action=out'>Выход</a><br>";
+echo "<a href='index.php?action=out'>Выход</a><br>";
 
 if ($admin) { //если зашел админ - выводим ему таблицу со всеми юзерами и управлением ими
     echo '
