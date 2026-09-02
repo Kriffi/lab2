@@ -54,8 +54,8 @@ function enter($link) {
             if (md5(md5($password).$row['salt']) == $row['password']) //сравниваем пароль из БД с паролем, введённым пользователем
             {
                 //пишем логин и пароль в cookie, также создаём переменную сессии
-                // setcookie("login", $row['login'], time() + 50000, '/');
-                // setcookie("password", md5($row['login'].$row['password']), time() + 50000, '/'); //проверяем md5 - хэш пароля
+                 setcookie("login", $row['login'], time() + 50000, '/');
+                 setcookie("password", md5($row['login'].$row['password']), time() + 50000, '/'); //проверяем md5 - хэш пароля
                 $_SESSION['id'] = $row['id'];          //записываем в сессию id пользователя
                 $id = $_SESSION['id'];
                 lastAct($id,$link);
